@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Detection UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌦️ Weather Detection</h1>
+            <p>Enter a city name to check the weather</p>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Enter city name..." 
+                        class="city-input"
+                        autocomplete="off"
+                    >
+                    <button id="checkWeatherBtn" class="check-btn">
+                        Check Weather
+                    </button>
+                </div>
+            </section>
+
+            <section id="weatherDisplay" class="weather-display hidden">
+                <div class="weather-card">
+                    <div class="weather-header">
+                        <h2 id="cityName" class="city-name"></h2>
+                        <span id="weatherIcon" class="weather-icon"></span>
+                    </div>
+                    
+                    <div class="weather-info">
+                        <div class="temperature">
+                            <span id="tempValue" class="temp-value"></span>
+                            <span class="temp-unit">°C</span>
+                        </div>
+                        <div id="weatherDescription" class="weather-description"></div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Feels Like:</span>
+                            <span id="feelsLike" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Humidity:</span>
+                            <span id="humidity" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Wind Speed:</span>
+                            <span id="windSpeed" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pressure:</span>
+                            <span id="pressure" class="detail-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="loadingState" class="loading-state hidden">
+                <div class="loading-spinner"></div>
+                <p>Fetching weather data...</p>
+            </section>
+
+            <section id="errorState" class="error-state hidden">
+                <div class="error-icon">⚠️</div>
+                <p id="errorMessage">Unable to fetch weather data. Please try again.</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Weather Detection UI - Mini Project</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
